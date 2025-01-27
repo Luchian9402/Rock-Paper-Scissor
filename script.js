@@ -56,18 +56,18 @@ function playGame() {
     
     if (game === 'I win') {
       humanScore ++;
-      console.log(`I won the round! Score: Me ${humanScore} - You ${computerScore}`)
+      alert(`I won the round! Score: Me ${humanScore} - You ${computerScore}`)
     } else if (game === 'You win') {
       computerScore ++;
-      console.log(`You won that round! Score: Me ${humanScore} - You ${computerScore}`)
+      alert(`You won that round! Score: Me ${humanScore} - You ${computerScore}`)
     } else {
-      console.log(`Draw! Score: Me ${humanScore} - You ${computerScore}`)
+      alert(`Draw! Score: Me ${humanScore} - You ${computerScore}`)
     }
   }
   if (humanScore === 5) {
-    console.log('I won the match')
+    alert('I won the match')
   } else if (computerScore === 5) {
-    console.log('You won the match')
+    alert('You won the match')
   }
 }
 
