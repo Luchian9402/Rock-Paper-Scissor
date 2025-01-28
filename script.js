@@ -6,8 +6,13 @@ let humanScore = 0;
 let computerScore = 0;
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice()
-
-function getComputerChoice(num) {
+const rockBtn = document.querySelector("#rockBtn")
+const paperBtn = document.querySelector("#paperBtn");
+const scissorBtn = document.querySelector("#scissorBtn");
+const result = document.querySelector("#result")
+let humanChoice;
+let computerChoice;
+function getComputerChoice() {
   randomNum = Math.floor(Math.random() * 3)
   
   if (randomNum === 0) {
@@ -19,18 +24,20 @@ function getComputerChoice(num) {
   }
 }
 
-function getHumanChoice(hum) {
-  humanChoice = prompt('Rock,Paper or Scissors')
+function getHumanChoice() {
+  rockBtn.addEventListener("click", () => {
+    humanChoice = "rock"
+  });
+  paperBtn.addEventListener("click", () => {
+    humanChoice = "paper"
+  });
+  scissorBtn.addEventListener("click", () => {
+    humanChoice = "scissors"
+  })
 
-  if (humanChoice.toLowerCase() === 'rock') {
-    return 'rock'
-  } else if (humanChoice.toLowerCase() === 'paper') {
-    return 'paper'
-  } else if (humanChoice.toLowerCase() === 'scissors') {
-    return 'scissors'
-  } else {
-    return 'Not at valid choice'
-  }
+  
+
+  
 }
 
 function playRound(humanChoice, computerChoice) {
@@ -48,10 +55,23 @@ function playRound(humanChoice, computerChoice) {
     }
    }
 
-function playGame() {
+const rockBtn = document.querySelector("#rockBtn")
+const paperBtn = document.querySelector("#paperBtn");
+const scissorBtn = document.querySelector("#scissorBtn");
+rockBtn.textContent = "Rock!"
+
+rockBtn.addEventListener("click", () => {
+  playRound(humanSelection)
+});
+
+computerBtn.addEventListener("click", () => {
+  playRound(computerSelection)
+});
+
+/*function playGame() {
   while (humanScore < 5 && computerScore < 5) {
-    let human = getHumanChoice()
-    let computer = getComputerChoice()
+    let human = humanChoice
+    let computer = computerChoice
     let game = playRound(human, computer)
     
     if (game === 'I win') {
@@ -69,6 +89,11 @@ function playGame() {
   } else if (computerScore === 5) {
     alert('You won the match')
   }
-}
+} */
 
-playGame();
+
+
+
+
+
+//playGame();
